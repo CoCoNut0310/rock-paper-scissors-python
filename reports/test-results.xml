@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="0.026" timestamp="2025-04-26T16:58:26.072593+08:00" hostname="CoCoDesu"><testcase classname="test_game" name="test_user_choice" time="0.001" /></testsuite></testsuites>

@@ -1,5 +1,9 @@
 import random
 
+# Function for test_game.py
+def is_valid_choice(choice):
+    return choice.lower() in ['rock', 'paper', 'scissors']
+
 # Function to get the computer's choice
 def get_computer_choice():
     return random.choice(['Rock', 'Paper', 'Scissors'])
