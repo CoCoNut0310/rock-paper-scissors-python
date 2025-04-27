@@ -1,19 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
-  <!-- Background -->
-  <rect width="100%" height="100%" fill="#e3f2fd"/>
+<svg width="300" height="230" viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .label { font: bold 14px sans-serif; text-anchor: middle; fill: #424242; } /* Style for item labels */
+    .arrow-head { fill: #D32F2F; } /* Darker Red color for arrow heads */
+    .arrow-line { stroke: #D32F2F; stroke-width: 2.5; fill: none; } /* Darker Red color for arrow lines, slightly thicker */
+  </style>
 
-  <!-- Rock Icon -->
-  <circle cx="80" cy="100" r="60" fill="#8d6e63" stroke="#5d4037" stroke-width="4"/>
-  <text x="80" y="115" font-family="Arial" font-size="40" text-anchor="middle" fill="#fff">🪨</text>
-  
-  <!-- Paper Icon -->
-  <rect x="160" y="60" width="80" height="80" fill="#c5cae9" stroke="#3f51b5" stroke-width="4"/>
-  <text x="200" y="115" font-family="Arial" font-size="40" text-anchor="middle" fill="#3f51b5">📄</text>
-  
-  <!-- Scissors Icon -->
-  <path d="M280 80 L320 120 L280 160 L240 120 Z" fill="#ff8a80" stroke="#c62828" stroke-width="4"/>
-  <text x="280" y="115" font-family="Arial" font-size="40" text-anchor="middle" fill="#fff">✂️</text>
-  
-  <!-- Title -->
-  <text x="200" y="190" font-family="Arial" font-size="24" text-anchor="middle" fill="#333">Rock, Paper, Scissors</text>
+  <!-- Background (optional) -->
+  <rect width="100%" height="100%" fill="#E0F2F7"/>
+
+  <!-- Icons positioned in a triangle -->
+  <!-- Rock -->
+  <g transform="translate(150, 50)">
+    <path d="M 0,-28 C -15,-30 -28,-15 -30,-5 C -32,10 -20,25 -5,30 C 10,33 25,20 30,5 C 35,-10 20,-25 0,-28 Z" fill="#9E9E9E" stroke="#616161" stroke-width="1.5"/>
+  </g>
+  <text x="150" y="95" class="label">Rock</text> <!-- Rock Label -->
+
+  <!-- Paper -->
+  <g transform="translate(240, 140)">
+    <path d="M -25,-30 L 25,-30 L 25,30 L -25,30 Z M 25,-30 L 15,-30 L 15,-20 L 25,-20 Z" fill="#FFFFFF" stroke="#757575" stroke-width="1.5"/>
+    <line x1="-18" y1="-18" x2="18" y2="-18" stroke="#BDBDBD" stroke-width="1.5"/>
+    <line x1="-18" y1="-8" x2="18" y2="-8" stroke="#BDBDBD" stroke-width="1.5"/>
+    <line x1="-18" y1="2" x2="18" y2="2" stroke="#BDBDBD" stroke-width="1.5"/>
+    <line x1="-18" y1="12" x2="10" y2="12" stroke="#BDBDBD" stroke-width="1.5"/>
+    <path d="M 15,-30 Q 15,-20 25,-20 M 15,-20 L 15,-30" fill="none" stroke="#757575" stroke-width="1.5"/>
+  </g>
+  <text x="240" y="185" class="label">Paper</text> <!-- Paper Label -->
+
+  <!-- Scissors -->
+  <g transform="translate(60, 140)" stroke="#616161" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="-12" cy="18" r="8"/> <circle cx="12" cy="18" r="8"/>
+    <line x1="-12" y1="10" x2="0" y2="-5"/> <line x1="12" y1="10" x2="0" y2="-5"/>
+    <line x1="-3" y1="-8" x2="-15" y2="-28"/> <line x1="3" y1="-8" x2="15" y2="-28"/>
+    <circle cx="0" cy="-5" r="2" fill="#616161"/>
+  </g>
+  <text x="60" y="185" class="label">Scissors</text> <!-- Scissors Label -->
+
+  <!-- Arrows using Circular Arcs (A command) -->
+  <!-- Arrow Definitions -->
+  <defs>
+    <marker id="arrowhead"
+            viewBox="0 0 10 10"
+            refX="8" refY="5"
+            markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="arrow-head" /> <!-- Arrowhead shape using class -->
+    </marker>
+    <!-- Moved comment: Adjusted refX to pull arrowhead back slightly more -->
+  </defs>
+
+  <!-- Paper covers Rock (Circular Arc) -->
+  <path d="M 205,115 A 85 85 0 0 0 175,80" class="arrow-line" marker-end="url(#arrowhead)" />
+  <!-- rx=85, ry=85, x-rot=0, large-arc=0, sweep=0, endX=175, endY=80 -->
+
+  <!-- Rock crushes Scissors (Circular Arc) -->
+  <path d="M 125,80 A 85 85 0 0 0 85,115" class="arrow-line" marker-end="url(#arrowhead)" />
+  <!-- rx=85, ry=85, x-rot=0, large-arc=0, sweep=0, endX=85, endY=115 -->
+
+  <!-- Scissors cuts Paper (Circular Arc) -->
+  <path d="M 85,165 A 85 85 0 0 0 215,165" class="arrow-line" marker-end="url(#arrowhead)" />
+  <!-- rx=85, ry=85, x-rot=0, large-arc=0, sweep=0, endX=215, endY=165 -->
+
 </svg>
