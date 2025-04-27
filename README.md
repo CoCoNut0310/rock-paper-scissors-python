@@ -5,7 +5,7 @@
 ![Logo](logo.svg)
 
 ---
-Welcome to the Python version of the Rock, Paper, Scissors game! This command-line game allows you to challenge the computer in a classic game of Rock, Paper, Scissors. Play to see who wins!
+Welcome to the Rock, Paper, Scissors game in python version! This command-line game allows you to challenge the computer in a classic game of Rock, Paper, Scissors. Computer will choose among ROCK, PAPER and SCISSOR randomly. Play to see who wins! Good Luck!
 
 ## Table of Contents 📚
 
